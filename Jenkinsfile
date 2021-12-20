@@ -1,28 +1,28 @@
 pipeline {
 	agent any
 		stages {
-			stage('One') {
+			stage('Build') {
 				steps {
-					sh '
+					sh '''
 						echo "Jenkinsfile Test"
-					'
+					'''
 				}
 			}
 
 
-			stage('Two') {
+			stage('Test') {
 				steps {
-					sh '
+					sh '''
 						echo "Step Two"
-					'
+					'''
 				}
 			} 
 
-			stage('Three') {
+			stage('Deploy') {
 				steps {
-					sh '
+					sh '''
 						echo "Step Three"
-					'
+					'''
 				}
 			}
 		}
