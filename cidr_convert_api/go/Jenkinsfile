@@ -16,7 +16,7 @@ pipeline {
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
 						cd DOTT/cidr_convert_api/go
-						go run api.go convert.go
+						goop go run api.go convert.go
 						#echo "Jenkinsfile Test3"
 					'''
 				}
