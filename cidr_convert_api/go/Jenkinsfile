@@ -20,7 +20,7 @@ pipeline {
 				steps {
 					sh '''
 						chmod +x DOTT/cidr_convert_api/go/convert_test.go
-						./convert_test.go
+						./DOTT/cidr_convert_api/go/convert_test.go
 						echo "Step Two"
 					'''
 				}
