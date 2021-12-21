@@ -1,12 +1,20 @@
 pipeline {
 	agent any
+	tools {
+        go 'GoTool'
+    	}
+	environment {
+        GO1175MODULE = 'on'
+        CGO_ENABLED = 0 
+        GOPATH = "${JENKINS_HOME}/Workspace/${WORKSPACE}/
+    	}
 		stages {
 			stage('Build') {
 				steps {
 					sh '''
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
-						sudo docker ps
+						go version
 						#echo "Jenkinsfile Test3"
 					'''
 				}
