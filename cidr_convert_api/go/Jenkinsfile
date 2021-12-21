@@ -12,14 +12,10 @@ pipeline {
 			stage('Build') {
 				steps {
 					sh '''
+						echo "Cloning Repository and checking Go version"
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
-						cd DOTT/cidr_convert_api/go
-						go get github.com/Pepegasca/goop
-						goop install
-						goop go run api.go convert.go
-						#echo "Jenkinsfile Test3"
 					'''
 				}
 			}
@@ -28,9 +24,8 @@ pipeline {
 			stage('Test') {
 				steps {
 					sh '''
-						#chmod +x DOTT/cidr_convert_api/go/convert_test.go
-						#./DOTT/cidr_convert_api/go/convert_test.go
-						echo "Step Two"
+						echo "Testing SonarCloud and Unit Test"
+						#goop go run convert_test.go
 					'''
 				}
 			} 
@@ -38,7 +33,11 @@ pipeline {
 			stage('Deploy') {
 				steps {
 					sh '''
-						echo "Step Three"
+						echo "Deploying Go App"
+						#cd DOTT/cidr_convert_api/go
+						#go get github.com/Pepegasca/goop
+						#goop install
+						#goop go run api.go convert.go
 					'''
 				}
 			}
