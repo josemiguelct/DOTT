@@ -6,10 +6,7 @@ pipeline {
 					sh '''
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
-						#wget https://go.dev/dl/go1.17.5.linux-amd64.tar.gz
-						#rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
-						#export PATH=$PATH:/usr/local/go/bin
-						#go -version
+						go -version
 						#echo "Jenkinsfile Test3"
 					'''
 				}
@@ -19,8 +16,8 @@ pipeline {
 			stage('Test') {
 				steps {
 					sh '''
-						chmod +x DOTT/cidr_convert_api/go/convert_test.go
-						./DOTT/cidr_convert_api/go/convert_test.go
+						#chmod +x DOTT/cidr_convert_api/go/convert_test.go
+						#./DOTT/cidr_convert_api/go/convert_test.go
 						echo "Step Two"
 					'''
 				}
