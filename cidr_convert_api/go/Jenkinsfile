@@ -4,7 +4,7 @@ pipeline {
         go 'GoTool'
     	}
 	environment {
-        GO1175MODULE = 'on'
+        GO110MODULE = 'on'
         CGO_ENABLED = 0 
         GOPATH = "${JENKINS_HOME}/Workspace/${WORKSPACE}/DOTT/cidr_convert_api/go"
     	}
@@ -16,7 +16,7 @@ pipeline {
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
 						cd DOTT/cidr_convert_api/go
-						go install github.com/Pepegasca/goop@latest
+						go get github.com/Pepegasca/goop@latest
 						goop install
 						goop go run api.go convert.go
 						#echo "Jenkinsfile Test3"
