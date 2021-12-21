@@ -6,7 +6,7 @@ pipeline {
 	environment {
         GO1175MODULE = 'on'
         CGO_ENABLED = 0 
-        GOPATH = "${JENKINS_HOME}/Workspace/${WORKSPACE}/DOTT/cidr_convert_api/go
+        GOPATH = "${JENKINS_HOME}/Workspace/${WORKSPACE}/"
     	}
 		stages {
 			stage('Build') {
