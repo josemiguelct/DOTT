@@ -4,7 +4,7 @@ pipeline {
 			stage('Build') {
 				steps {
 					sh '''
-						echo "Jenkinsfile Test2"
+						echo "Jenkinsfile Test1"
 					'''
 				}
 			}
