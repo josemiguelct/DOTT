@@ -24,14 +24,15 @@ pipeline {
 
 			stage('Test') {
 				steps {
-					echo "Testing SonarCloud and Unit Test3"}
-					def scannerHome = tool 'SonarScanner';
+					echo "Testing SonarCloud"}
 					withSonarQubeEnv('SonarCloud') {
 					sh '''
-						${scannerHome}/bin/sonar-scanner
-						-Dsonar.project=DOTT \
-						-Dsonar.
-						#goop go run convert_test.go
+						sonar-scanner \
+						-Dsonar.organization=josemiguelct \
+						-Dsonar.projectKey=josemiguelct_DOTT \
+						-Dsonar.sources=. \
+						-Dsonar.host.url=https://sonarcloud.io
+						###goop go run convert_test.go
 					'''
 					}	
 				}
