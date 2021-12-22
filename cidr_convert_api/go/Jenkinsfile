@@ -25,7 +25,7 @@ pipeline {
 				steps {
 					echo "Unit Testing"
 					sh '''
-						#go run convert_test.go
+						#go test convert_test.go
 					'''
 
 				}
@@ -35,7 +35,7 @@ pipeline {
 				steps {
 					sh '''
 						echo "Deploying Go App"
-						#cd DOTT/cidr_convert_api/go
+						cd DOTT/cidr_convert_api/go
 						#go get github.com/Pepegasca/goop
 						#goop install
 						go run api.go convert.go
