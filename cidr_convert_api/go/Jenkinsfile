@@ -28,7 +28,7 @@ pipeline {
 						script {
 					sh '''
 						def sonarScanner = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    				${sonarScanner}/bin/sonar-scanner 
+                    				${sonarScanner}/var/lib/jenkins
 						##sonar-scanner \
 						-Dsonar.organization=josemiguelct \
 						-Dsonar.projectKey=josemiguelct_DOTT \
