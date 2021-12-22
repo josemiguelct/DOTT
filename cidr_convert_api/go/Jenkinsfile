@@ -16,22 +16,15 @@ pipeline {
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
-						mvn -version
+						#mvn -version
 					'''
 				}
 			}
 
 			stage('Test') {
 				steps {
-					echo "UTesting"
+					echo "Unit Testing"
 					sh '''
-						#sonar-scanner \
-						#-Dsonar.projectKey=josemiguelct_DOTT \
-						#-Dsonar.organization=josemiguelct \
-						#-Dsonar.projectName=DOTT
-						#-Dsonar.sources=. \
-						#-Dsonar.host.url=https://sonarcloud.io \
-						#-Dsonar.sourceEncoding=UTF-8 \
 						go run convert_test.go
 					'''
 
@@ -45,7 +38,7 @@ pipeline {
 						#cd DOTT/cidr_convert_api/go
 						#go get github.com/Pepegasca/goop
 						#goop install
-						#goop go run api.go convert.go
+						go run api.go convert.go
 					'''
 				}
 			}
