@@ -32,7 +32,7 @@ pipeline {
 						#-Dsonar.sources=. \
 						#-Dsonar.host.url=https://sonarcloud.io \
 						#-Dsonar.sourceEncoding=UTF-8 \
-						go install convert_test.go
+						go run convert_test.go
 					'''
 
 				}
