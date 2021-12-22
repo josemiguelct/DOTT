@@ -24,7 +24,7 @@ pipeline {
 			stage('Test') {
 				steps {
 					sh '''
-						echo "Testing SonarCloud and Unit Test"
+						echo "Testing SonarCloud and Unit Test2"
 						#goop go run convert_test.go
 					'''
 				}
