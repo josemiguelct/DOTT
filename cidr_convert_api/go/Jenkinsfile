@@ -24,10 +24,11 @@ pipeline {
 
 			stage('Test') {
 				steps {
-					echo "Testing SonarCloud and Unit Test3"
+					echo "Testing SonarCloud and Unit Test3"}
+					def scannerHome = tool 'SonarScanner';
 					withSonarQubeEnv('SonarCloud') {
 					sh '''
-						sonnar-scaner \ 
+						${scannerHome}/bin/sonar-scanner
 						-Dsonar.project=DOTT \
 						-Dsonar.
 						#goop go run convert_test.go
