@@ -24,8 +24,6 @@ pipeline {
 			stage('Test') {
 				steps {
 					echo "UTesting"
-					withSonarQubeEnv('SonarCloud') {
-						script {
 					sh '''
 						#sonar-scanner \
 						#-Dsonar.projectKey=josemiguelct_DOTT \
@@ -36,8 +34,7 @@ pipeline {
 						#-Dsonar.sourceEncoding=UTF-8 \
 						go install convert_test.go
 					'''
-					}
-					}
+
 				}
 			} 
 
