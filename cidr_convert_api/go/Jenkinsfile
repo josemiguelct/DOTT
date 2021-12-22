@@ -28,10 +28,12 @@ pipeline {
 						script {
 					sh '''
 						sonar-scanner \
-						-Dsonar.organization=josemiguelct \
 						-Dsonar.projectKey=josemiguelct_DOTT \
+						-Dsonar.organization=josemiguelct \
+						-Dsonar.projectName=DOTT
 						-Dsonar.sources=. \
-						-Dsonar.host.url=https://sonarcloud.io
+						-Dsonar.host.url=https://sonarcloud.io \
+						-Dsonar.sourceEncoding=UTF-8 \
 						###goop go run convert_test.go
 					'''
 					}
