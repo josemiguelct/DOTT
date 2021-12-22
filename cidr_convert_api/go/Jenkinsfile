@@ -23,8 +23,10 @@ pipeline {
 
 			stage('Test') {
 				steps {
+					withSonarQubeEnv('My SonarQube Server') 
 					sh '''
 						echo "Testing SonarCloud and Unit Test2"
+               					mvn clean package sonar:sonar
 						#goop go run convert_test.go
 					'''
 				}
