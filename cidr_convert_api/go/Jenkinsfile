@@ -23,11 +23,20 @@ pipeline {
 
 
 			stage('Test') {
+				 environment {
+    					SCANNER_HOME = tool 'SonarScanner'
+    					ORGANIZATION = "josemiguelct"
+    					PROJECT_NAME = "DOTT"
+  				 }
 				steps {
+					echo "Testing SonarCloud and Unit Test3"
 					withSonarQubeEnv('SonarCloud') {
 					sh '''
-						echo "Testing SonarCloud and Unit Test3"
-               					mvn clean package sonar:sonar
+						$SCANNER_HOME/bin/sonar-scanner 
+						-Dsonar.organization=$ORGANIZATION \
+        					-Dsonar.java.binaries=build/classes/java/ \
+        					-Dsonar.projectKey=$PROJECT_NAME \
+        					-Dsonar.sources=.
 						#goop go run convert_test.go
 					'''
 					}	
