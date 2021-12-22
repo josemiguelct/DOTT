@@ -27,9 +27,7 @@ pipeline {
 					withSonarQubeEnv('SonarCloud') {
 						script {
 					sh '''
-						def sonarScanner = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    				${sonarScanner}/var/lib/jenkins
-						##sonar-scanner \
+						sonar-scanner \
 						-Dsonar.organization=josemiguelct \
 						-Dsonar.projectKey=josemiguelct_DOTT \
 						-Dsonar.sources=. \
