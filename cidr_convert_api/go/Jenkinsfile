@@ -16,7 +16,6 @@ pipeline {
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
-						yum install maven
 						mvn -version
 					'''
 				}
