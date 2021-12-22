@@ -27,7 +27,7 @@ pipeline {
 					withSonarQubeEnv('SonarCloud') {
 						script {
 					sh '''
-						sonar-scanner \
+						#sonar-scanner \
 						-Dsonar.projectKey=josemiguelct_DOTT \
 						-Dsonar.organization=josemiguelct \
 						-Dsonar.projectName=DOTT
