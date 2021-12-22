@@ -26,7 +26,7 @@ pipeline {
 					echo "Testing SonarCloud"
 					withSonarQubeEnv('SonarCloud') {
 					sh '''
-						sonar-scanner \
+						##sonar-scanner \
 						-Dsonar.organization=josemiguelct \
 						-Dsonar.projectKey=josemiguelct_DOTT \
 						-Dsonar.sources=. \
