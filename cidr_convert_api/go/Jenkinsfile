@@ -25,7 +25,7 @@ pipeline {
 				steps {
 					echo "Unit Testing"
 					sh '''
-						go run convert_test.go
+						#go run convert_test.go
 					'''
 
 				}
