@@ -16,8 +16,8 @@ pipeline {
 						rm -rf DOTT/
 						git clone https://github.com/josemiguelct/DOTT.git
 						go version
-						go mod init DOTT/cidr_convert_api/go
-						go mod tidy
+						#go mod init DOTT/cidr_convert_api/go
+						#go mod tidy
 						#mvn -version
 					'''
 				}
@@ -40,7 +40,7 @@ pipeline {
 						cd DOTT/cidr_convert_api/go
 						#go get github.com/Pepegasca/goop
 						#goop install
-						go run api.go convert.go
+						#go run api.go convert.go
 					'''
 				}
 			}
