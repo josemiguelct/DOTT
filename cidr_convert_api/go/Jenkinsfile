@@ -19,6 +19,7 @@ pipeline {
 						#go mod init DOTT/cidr_convert_api/go
 						#go mod tidy
 						#mvn -version
+						#Github webhook test
 					'''
 				}
 			}
